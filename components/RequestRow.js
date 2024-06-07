@@ -25,7 +25,9 @@ class RequestRow extends Component {
   render() {
     const { Row, Cell } = Table;
     const { id, request, approversCount } = this.props;
-    const readyToFinalize = request.approvalCount > approversCount / 2;
+    //const readyToFinalize = request.approvalCount > approversCount / 2;
+    const readyToFinalize =
+      request.approvalCount > BigInt(approversCount) / BigInt(2);
 
     return (
       <Row
@@ -37,7 +39,7 @@ class RequestRow extends Component {
         <Cell>{web3.utils.fromWei(request.value, "ether")}</Cell>
         <Cell>{request.recipient}</Cell>
         <Cell>
-          {request.approvalCount}/{approversCount}
+          {request.approvalCount.toString()}/{approversCount.toString()}
         </Cell>
         <Cell>
           {request.complete ? null : (
