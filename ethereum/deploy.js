@@ -3,9 +3,9 @@ const { Web3 } = require("web3");
 const compiledFactory = require("./build/CampaignFactory.json");
 
 const provider = new HDWalletProvider(
-  "obvious crush range improve shoulder toilet review idle grief crater disease average",
+  "YOUR_MNEMONIC",
   // remember to change this to your own phrase!
-  "https://sepolia.infura.io/v3/32d565bb2ce14eaea3e23a5b32c4a5e9"
+  "YOUR_INFURA_URL"
   // remember to change this to your own endpoint!
 );
 const web3 = new Web3(provider);
